@@ -21,7 +21,7 @@ import com.appstarter.BuildConfig;
  */
 public class StringUtils {
 
-	private static String TAG = StringUtils.class.getSimpleName();
+	private static String TAG = "AppStarter.StringUtils";
 
 	private StringUtils() {
 	}

@@ -46,20 +46,20 @@ public class ZipUtils {
 			fin = new FileInputStream(filepath + "/" + filename);
 			zin = new ZipInputStream(fin);
 			ze = null;
-			
+
 			total = file.size();
 			while ((ze = zin.getNextEntry()) != null) {
 				idx++;
-				
+
 				// Avoid MAC stuff
 				if (ze.getName().contains("__MACOSX") || ze.getName().contains("DS_Store")) {
 					continue;
 				}
 
-				if( callback != null ){
+				if (callback != null) {
 					callback.onProgress(total, idx, ze.getName());
 				}
-				
+
 				if (ze.isDirectory()) {
 					_dirChecker(filepath, ze.getName());
 				} else {
@@ -117,17 +117,17 @@ public class ZipUtils {
 			fin = new FileInputStream(filepath + "/" + filename);
 			zin = new ZipInputStream(fin);
 			ze = null;
-			
+
 			total = file.size();
 			while ((ze = zin.getNextEntry()) != null) {
 				idx++;
-				
+
 				// Avoid MAC shit
 				if (ze.getName().contains("__MACOSX") || ze.getName().contains("DS_Store")) {
 					continue;
 				}
-				
-				if( callback != null ){
+
+				if (callback != null) {
 					callback.onProgress(total, idx, ze.getName());
 				}
 

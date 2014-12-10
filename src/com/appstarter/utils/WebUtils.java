@@ -22,7 +22,7 @@ import com.squareup.okhttp.Response;
  */
 public final class WebUtils {
 
-	private static String TAG = "WebUtils";
+	private static String TAG = "AppStarter.WebUtils";
 
 	private WebUtils() {
 	}

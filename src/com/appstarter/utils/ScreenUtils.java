@@ -1,6 +1,5 @@
 package com.appstarter.utils;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Point;
 import android.os.Build;
@@ -24,7 +23,6 @@ public class ScreenUtils {
 	
 	private static ScreenUtils mInstance;
 	
-	@SuppressLint("NewApi")
 	private ScreenUtils(Context context){
 		WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
 		Display display = wm.getDefaultDisplay();
