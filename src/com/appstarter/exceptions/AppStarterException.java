@@ -1,5 +1,9 @@
 package com.appstarter.exceptions;
 
+import android.util.Log;
+
+import com.appstarter.BuildConfig;
+
 /**
  * AppStarterException.
  * 
@@ -23,6 +27,15 @@ public class AppStarterException extends Exception {
 	public AppStarterException(int code) {
 		super();
 		mErrorCode = code;
+	}
+	
+	public AppStarterException(int code, String debugMessage) {
+		super();
+		mErrorCode = code;
+		
+		if (BuildConfig.DEBUG) {
+			Log.e("AppStarterException", debugMessage);
+		}
 	}
 	
 	public AppStarterException(Exception e, int code) {

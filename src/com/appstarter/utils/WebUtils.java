@@ -46,7 +46,8 @@ public final class WebUtils {
 			
 			Response response = client.newCall(request).execute();
 			if (!response.isSuccessful()) {
-				throw new AppStarterException(AppStarterException.ERROR_SERVER);
+				String debugMessage = "doHttpGet - OkHttp.Response is not successful - " + response.message() + " (" + response.code() + ")";
+				throw new AppStarterException(AppStarterException.ERROR_SERVER, debugMessage);
 			}
 			ret = response.body().string();
 		} catch (IOException e) {
@@ -82,7 +83,8 @@ public final class WebUtils {
 			
 			Response response = client.newCall(request).execute();
 			if (!response.isSuccessful()) {
-				throw new AppStarterException(AppStarterException.ERROR_SERVER);
+				String debugMessage = "doHttpPost - OkHttp.Response is not successful - " + response.message() + " (" + response.code() + ")";
+				throw new AppStarterException(AppStarterException.ERROR_SERVER, debugMessage);
 			}
 			ret = response.body().string();
 		} catch (IOException e) {
